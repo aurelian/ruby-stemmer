@@ -1,10 +1,8 @@
 #!/usr/bin/env ruby
-
+# coding:utf-8
 #
 # $Id: test.rb 21 2008-04-30 10:57:37Z aurelian $
 #
-
-$kcode = "utf-8"
 
 require "stemmer.so"
 

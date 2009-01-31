@@ -54,15 +54,15 @@ rb_stemmer_init(int argc, VALUE *argv, VALUE self) {
     renc  = rb_str_new2("UTF_8");
   }
   
-  stemmer = sb_stemmer_new( RSTRING(rlang)->ptr, RSTRING(renc)->ptr );
+  stemmer = sb_stemmer_new( RSTRING_PTR(rlang), RSTRING_PTR(renc) );
   if (stemmer == 0) {
     // printf(">>[libstemmer]: got a null stemmer!\n");
     if (renc == 0 ) {
-      rb_raise(rb_eRuntimeError, "Language %s not available for stemming", RSTRING(rlang)->ptr);
+      rb_raise(rb_eRuntimeError, "Language %s not available for stemming", RSTRING_PTR(rlang));
       exit(1);
     } else {
       rb_raise(rb_eRuntimeError, "Language %s not available for stemming in encoding %s", 
-                    RSTRING(rlang)->ptr, RSTRING(renc)->ptr);
+                    RSTRING_PTR(rlang), RSTRING_PTR(renc));
       exit(1);
     }
   }
@@ -70,8 +70,8 @@ rb_stemmer_init(int argc, VALUE *argv, VALUE self) {
   sb_data = ALLOC(struct sb_stemmer_data);
   DATA_PTR(self) = sb_data;
   sb_data->stemmer= stemmer;
-  sb_data->lang   = RSTRING(rlang)->ptr;
-  sb_data->enc    = RSTRING(renc)->ptr;
+  sb_data->lang   = RSTRING_PTR(rlang);
+  sb_data->enc    = RSTRING_PTR(renc);
 
   return self;
 }
@@ -91,8 +91,8 @@ rb_stemmer_stem(VALUE self, VALUE word) {
   struct sb_stemmer_data * sb_data;
   const  sb_symbol * stemmed;
   GetStemmer(self, sb_data);
-  stemmed = sb_stemmer_stem(sb_data->stemmer, (sb_symbol *)RSTRING(word)->ptr, RSTRING(word)->len);
-  // printf(">>[libstemmer %s/%s]: %s-> %s\n", sb_data->lang, sb_data->enc, RSTRING(word)->ptr, stemmed);
+  stemmed = sb_stemmer_stem(sb_data->stemmer, (sb_symbol *)RSTRING_PTR(word), RSTRING_LEN(word));
+  // printf(">>[libstemmer %s/%s]: %s-> %s\n", sb_data->lang, sb_data->enc, RSTRING_PTR(word), stemmed);
   return rb_str_new2((char *)stemmed);
 }
 
