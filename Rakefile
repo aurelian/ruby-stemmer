@@ -6,7 +6,7 @@ require 'rubygems'
 require 'rake'
 require 'echoe'
 
-Echoe.new('ruby-stemmer', '0.5.2') do |p|
+Echoe.new('ruby-stemmer', '0.5.3') do |p|
     p.description    = "Stemmer implementation to ruby using libstemmer_c. Working with ruby 1.9.1"
     p.url            = "http://github.com/yury/ruby-stemmer"
     p.author         = "Yury Korolev"
