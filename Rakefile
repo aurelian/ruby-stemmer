@@ -8,9 +8,9 @@ require 'echoe'
 
 Echoe.new('ruby-stemmer', '0.5.3') do |p|
     p.description    = "Stemmer implementation to ruby using libstemmer_c. Working with ruby 1.9.1"
-    p.url            = "http://github.com/yury/ruby-stemmer"
-    p.author         = "Yury Korolev"
-    p.email          = "yury.korolev@gmail.com"
+    p.url            = "http://github.com/aurelian/ruby-stemmer"
+    p.author         = "Aurelian Oancea, Yury Korolev"
+    p.email          = "aurelian@locknet.ro"
     p.extensions     = ["extconf.rb"]
     p.ignore_pattern = ["*.o", "**/*.o", "stemwords", "*.bundle", "*.a", "*.so"]
     p.development_dependencies = []
