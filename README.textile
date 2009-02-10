@@ -1,48 +1,31 @@
---
-$Id: README 19 2008-01-08 12:25:57Z aurelian $
-++
-
 == About
 
-ruby-stemmer, an extension to ruby using SnowBall API stemmer implementation libstemmer_c.
+ruby-stemmer is an extension to ruby using the SnowBall API stemmer implementation.
 
 This package includes libstemmer_c library from http://snowball.tartarus.org/dist/libstemmer_c.tgz published under the terms of BSD License.
 
-For details about libstemmer_c read libstemmer_c/README or http://snowball.tartarus.org.
+For details about libstemmer_c please check libstemmer_c/README file or "http://snowball.tartarus.org":http://snowball.tartarus.org.
 
-author: Aurelian Oancea, aurelian at locknet dot ro
+author: Aurelian Oancea, oancea at gmail.com
 
-licence: MIT, see MIT-LICENSE for details
+licence: MIT, see MIT-LICENSE file for details
 
-:include: MIT-LICENSE
 
 == Install
 
+Use sudo or run as root if you get Permission Deny issues
+
 I) Using RubyGems
 
-  $ gem install ruby-stemmer
+  @$ gem install ruby-stemmer@
 
 II) From tarball
 
-Use sudo or run as root if you get Permission Deny issues
 
-Compile libstemmer_c and generate the Makefile:
-
-  $ ruby extconf.rb
-
-Compile the library:
-
-  $ make
-
-Test:
-
-  $ ./test.rb
-
-Install it:
-
-  $ make install
-
-Run the last command as root or with sudo if you get permission deny problems
+  $ ruby extconf.rb # => compile libstemmer_c and generate a Makefile
+  $ make # => compile the library
+  $ ./test.rb # => test it :)
+  $ make install # => to install
 
 == Usage
 
@@ -50,6 +33,7 @@ see test.rb
 
 == API
 
+<pre>
   module Lingua
     class Steemer
 
@@ -71,6 +55,7 @@ see test.rb
       end
     end
   end
+</pre>
 
 == Todo
 
