@@ -81,7 +81,7 @@ libstemmer_c/src_c/stem_UTF_8_turkish.h
 Manifest
 MIT-LICENSE
 Rakefile
-README
+README.textile
 ruby-stemmer.c
 ruby-stemmer.gemspec
 test.rb

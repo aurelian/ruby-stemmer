@@ -1,7 +1,3 @@
-#
-# $Id: Rakefile 22 2008-05-09 23:49:43Z aurelian $
-#
-
 require 'rubygems'
 require 'rake'
 require 'echoe'

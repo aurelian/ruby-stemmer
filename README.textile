@@ -1,4 +1,4 @@
-== About
+h3. About
 
 ruby-stemmer is an extension to ruby using the SnowBall API stemmer implementation.
 
@@ -11,11 +11,11 @@ author: Aurelian Oancea, oancea at gmail.com
 licence: MIT, see MIT-LICENSE file for details
 
 
-== Install
+h4. Install
 
 Use sudo or run as root if you get Permission Deny issues
 
-I) Using RubyGems
+h5. Stable version -- with rubygems:
 
   @$ gem install ruby-stemmer@
 
@@ -27,11 +27,13 @@ II) From tarball
   $ ./test.rb # => test it :)
   $ make install # => to install
 
-== Usage
+
+h4. Usage
 
 see test.rb
 
-== API
+
+h4. API
 
 <pre>
   module Lingua
@@ -57,7 +59,8 @@ see test.rb
   end
 </pre>
 
-== Todo
+
+h4. Todo
 
 * Add (Array of Hashes) Lingua::Stemmer.list to list available languages/encodings
 * Windows?
