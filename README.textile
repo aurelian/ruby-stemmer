@@ -1,17 +1,20 @@
 h3. About
 
 *ruby-stemmer* exposes SnowBall API stemmer implementation to ruby.
+
 This package includes *libstemmer_c* library - released under BSD licence and available for download at: "http://snowball.tartarus.org/dist/libstemmer_c.tgz":http://snowball.tartarus.org/dist/libstemmer_c.tgz.
+
 For details about *libstemmer_c* please check libstemmer_c/README file or "http://snowball.tartarus.org":http://snowball.tartarus.org.
 
 author: Aurelian Oancea, oancea at gmail.com
+
 licence: MIT, see MIT-LICENSE file for details
 
 
 h4. Install
 
 
-Use sudo or run as root if you get Permission Deny issues
+Please use sudo or run as root if you get in to _Permission Deny_ issues.
 
 h5. Stable version - with rubygems:
 
