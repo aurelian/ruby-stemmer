@@ -1,1 +1,5 @@
 pkg/*
+*.o
+*.so
+Makefile
+mkmf.log
