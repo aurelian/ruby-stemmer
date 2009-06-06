@@ -2,7 +2,7 @@ require 'rubygems'
 require 'rake'
 require 'echoe'
 
-Echoe.new('ruby-stemmer', '0.5.3') do |p|
+Echoe.new('ruby-stemmer', '0.5.4') do |p|
     p.description    = "Stemmer implementation to ruby using libstemmer_c. Working with ruby 1.9.1"
     p.url            = "http://github.com/aurelian/ruby-stemmer"
     p.author         = "Aurelian Oancea, Yury Korolev"
@@ -31,6 +31,7 @@ PKG_FILES.exclude('*.bundle')
 PKG_FILES.exclude('*.a')
 PKG_FILES.exclude('*.so')
 
+desc "Cleans the workspace"
 task :clean do
   `rm -rf Makefile mkmf.log ruby-stemmer.o stemmer.bundle stemmer.so`
   `cd libstemmer_c && make clean && cd ../`
