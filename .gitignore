@@ -3,3 +3,5 @@ pkg/*
 *.so
 Makefile
 mkmf.log
+*.swp
+*.bundle
