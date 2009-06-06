@@ -1,13 +1,9 @@
-#
-# $Id: extconf.rb 21 2008-04-30 10:57:37Z aurelian $
-#
-
 require "mkmf"
 
 system "cd libstemmer_c; make libstemmer.o; cd #{File.dirname(__FILE__)};"
 
-$CFLAGS  += " -I#{File.dirname(__FILE__)}/libstemmer_c/include "
-$libs    += " -L#{File.dirname(__FILE__)}/libstemmer_c #{File.dirname(__FILE__)}/libstemmer_c/libstemmer.o "
+$CFLAGS  += " -I#{File.join(File.dirname(__FILE__),'libstemmer_c','include')} "
+$libs    += " -L#{File.join(File.dirname(__FILE__),'libstemmer_c')} #{File.join(File.dirname(__FILE__),'libstemmer_c','libstemmer.o')} "
 
 # dir_config("libstemmer")
 
