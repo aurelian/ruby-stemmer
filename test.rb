@@ -1,12 +1,7 @@
 #!/usr/bin/env ruby
 # coding:utf-8
-#
-# $Id: test.rb 21 2008-04-30 10:57:37Z aurelian $
-#
 
 require "stemmer.so"
-
-#puts "installation".stem
 
 # puts ">>> test 1."
 stemmer = Lingua::Stemmer.new()
