@@ -5,7 +5,6 @@
 #
 
 require "stemmer.so"
-
 #puts "installation".stem
 
 # puts ">>> test 1."
@@ -29,3 +28,11 @@ puts stemmer.stem("personalities")
 puts ">>> test 5."
 stemmer = Lingua::Stemmer.new(:encoding => 'UTF_8', :language => 'ro')
 puts stemmer.stem("întrebător");
+
+puts ">>> test 6."
+stemmer = Lingua::Stemmer.new(:encoding => 'UTF_8', :language => 'ro')
+puts stemmer.stem(["one", "two"]);
+
+puts ">>> test 7."
+stemmer = Lingua::Stemmer.new(:encoding => 'UTF_8', :language => 'ro')
+puts stemmer.stem(nil);

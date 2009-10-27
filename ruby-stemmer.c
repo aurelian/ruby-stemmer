@@ -90,9 +90,9 @@ static VALUE
 rb_stemmer_stem(VALUE self, VALUE word) {
   struct sb_stemmer_data * sb_data;
   const  sb_symbol * stemmed;
+  VALUE s_word = rb_String(word);
   GetStemmer(self, sb_data);
-  stemmed = sb_stemmer_stem(sb_data->stemmer, (sb_symbol *)RSTRING_PTR(word), RSTRING_LEN(word));
-  // printf(">>[libstemmer %s/%s]: %s-> %s\n", sb_data->lang, sb_data->enc, RSTRING_PTR(word), stemmed);
+  stemmed = sb_stemmer_stem(sb_data->stemmer, (sb_symbol *)RSTRING_PTR(s_word), RSTRING_LEN(s_word));
   return rb_str_new2((char *)stemmed);
 }
 

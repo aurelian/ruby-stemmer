@@ -3,3 +3,6 @@ pkg/*
 *.so
 Makefile
 mkmf.log
+.idea/*
+stemmer.bundle
+
