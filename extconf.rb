@@ -1,6 +1,6 @@
 require "mkmf"
 
-system "cd libstemmer_c; make libstemmer.o; cd #{File.dirname(__FILE__)};"
+system "export ARCHFLAGS=' -arch #{Config::CONFIG['arch']}';cd libstemmer_c; make libstemmer.o; cd #{File.dirname(__FILE__)};"
 
 $CFLAGS  += " -I#{File.join(File.dirname(__FILE__),'libstemmer_c','include')} "
 $libs    += " -L#{File.join(File.dirname(__FILE__),'libstemmer_c')} #{File.join(File.dirname(__FILE__),'libstemmer_c','libstemmer.o')} "
