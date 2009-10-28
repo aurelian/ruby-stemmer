@@ -1,7 +1,10 @@
+ENV['RC_ARCHS'] = '' if RUBY_PLATFORM =~ /universal-darwin/
 require "mkmf"
 
 # build libstemmer_c
+ENV['ARCHFLAGS']= "-arch #{Config::CONFIG['host_cpu']}" if RUBY_PLATFORM =~ /darwin/
 ENV['ARCHFLAGS']= "-arch x86_64" if Config::CONFIG['host_cpu'] == 'i686' && RUBY_PLATFORM =~ /darwin/
+
 system "cd libstemmer_c; make libstemmer.o; cd #{File.dirname(__FILE__)};"
 
 $CFLAGS  += " -I#{File.join(File.dirname(__FILE__),'libstemmer_c','include')} "
