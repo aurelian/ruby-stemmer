@@ -77,6 +77,14 @@ For further reference on stem vs. root, please check wikipedia articles on the t
   bump version in a commit by itself I can ignore when I pull
 * Send me a pull request. Bonus points for topic branches.
 
+== Alternative Stemmers for Ruby
+
+* stemmer4r: http://rubyforge.org/projects/stemmer4r (ext)
+* fast-stemmer: http://github.com/romanbsd/fast-stemmer (ext)
+* stemmer: http://rubyforge.org/projects/stemmer (pure ruby)
+* uea-stemmer: http://github.com/ealdent/uea-stemmer
+* [add yours]
+
 == Copyright
 
 Copyright (c) 2009 Aurelian Oancea. See MIT-LICENSE for details.
