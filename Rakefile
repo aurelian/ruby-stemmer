@@ -16,8 +16,6 @@ begin
     %w(ext/lingua/*.so ext/lingua/*.bundle ext/lingua/Makefile ext/lingua/mkmf.log ext/lingua/*.o libstemmer_c/**/*.o).each do | f |
       gem.files.exclude f
     end
-    # gem.ignore_pattern = ["*.o", "**/*.o", "stemwords", "*.bundle", "*.a", "*.so", "Makefile"]
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
   Jeweler::RubyforgeTasks.new do |rubyforge|
@@ -65,8 +63,8 @@ end
 require 'rake/rdoctask'
 Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
-
   rdoc.rdoc_dir = 'rdoc'
+  rdoc.options << '--charset' << 'utf-8' 
   rdoc.title = "Ruby-Stemmer #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')

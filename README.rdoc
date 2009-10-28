@@ -5,15 +5,36 @@ Ruby-Stemmer exposes SnowBall API to Ruby.
 This package includes libstemmer_c library released under BSD licence 
 and available for free at: http://snowball.tartarus.org/dist/libstemmer_c.tgz.
 
-For details about libstemmer_c please check libstemmer_c/README or http://snowball.tartarus.org.
+For more details about libstemmer_c please visit http://snowball.tartarus.org.
 
-== What id does?
+== Usage
 
-The stemming process is an algorithm to allow one to find the stem of an word (not the root of it).
-For further reference on stem vs. root, please check wikipedia articles on the topic:
+  require 'rubygems'
+  require 'lingua/stemmer'
 
-* http://en.wikipedia.org/wiki/Stem_%28linguistics%29
-* http://en.wikipedia.org/wiki/Root_%28linguistics%29
+  stemmer= Lingua::Stemmer.new(:language => "ro")
+  stemmer.stem("netăgăduit") #=> netăgădu
+
+=== Alternative
+
+  require 'rubygems'
+  require 'lingua/stemmer'
+
+  Lingua.stemmer( %w(incontestabil neîndoielnic), :language => "ro" ) #=> ["incontest", "neîndoieln"]
+  Lingua.stemmer("installation") #=> "instal"
+  Lingua.stemmer("installation", :language => "fr", :encoding => "ISO_8859_1") do | word |
+    puts "~> #{word}" #=> "instal"
+  end # => #<Lingua::Stemmer:0x102501e48>
+
+=== Rails
+  
+  # in config/environment.rb:
+  config.gem 'ruby-stemmer', :version => '>=0.6.2', :lib => 'lingua/stemmer'
+
+=== More details 
+
+* RDoc: http://ruby-stemmer.rubyforge.com/ruby-stemmer
+* Test: http://github.com/aurelian/ruby-stemmer/blob/master/test/lingua/test_stemmer.rb
 
 == Install
 
@@ -28,12 +49,21 @@ Please not that Windows is not supported at this time.
   $ git clone git://github.com/aurelian/ruby-stemmer.git
   $ cd ruby-stemmer
   $ rake -T #<== see what we've got
-  $ rake ext
+  $ rake ext #<== builds the extension do'h
   $ rake test
+
+== NOT A BUG
+
+The stemming process is an algorithm to allow one to find the stem of an word (not the root of it).
+For further reference on stem vs. root, please check wikipedia articles on the topic:
+
+* http://en.wikipedia.org/wiki/Stem_%28linguistics%29
+* http://en.wikipedia.org/wiki/Root_%28linguistics%29
 
 == TODO
 
-
+* Open issues: http://github.com/aurelian/ruby-stemmer/issues
+* Windows Support -> see rake-compiler to cross-compile a dll (with the gem and nokogiri Rakefile).
 
 == Note on Patches/Pull Requests
  
@@ -53,9 +83,10 @@ Copyright (c) 2009 Aurelian Oancea. See MIT-LICENSE for details.
 
 == Contributors
 
-
+* Aurelian Oancea
+* Yury Korolev
 
 == Real life usage
 
-
+* http://planet33.ru is using Ruby-Stemmer together with Classifier (http://github.com/yury/classifier) to automatically rate places based on users comments
 
