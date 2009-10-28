@@ -1,0 +1,61 @@
+= Ruby-Stemmer
+
+Ruby-Stemmer exposes SnowBall API to Ruby.
+
+This package includes libstemmer_c library released under BSD licence 
+and available for free at: http://snowball.tartarus.org/dist/libstemmer_c.tgz.
+
+For details about libstemmer_c please check libstemmer_c/README or http://snowball.tartarus.org.
+
+== What id does?
+
+The stemming process is an algorithm to allow one to find the stem of an word (not the root of it).
+For further reference on stem vs. root, please check wikipedia articles on the topic:
+
+* http://en.wikipedia.org/wiki/Stem_%28linguistics%29
+* http://en.wikipedia.org/wiki/Root_%28linguistics%29
+
+== Install
+
+=== Standard install with:
+
+ gem install ruby-stemmer
+
+Please not that Windows is not supported at this time.
+
+=== Development version
+
+  $ git clone git://github.com/aurelian/ruby-stemmer.git
+  $ cd ruby-stemmer
+  $ rake -T #<== see what we've got
+  $ rake ext
+  $ rake test
+
+== TODO
+
+
+
+== Note on Patches/Pull Requests
+ 
+* Fork the project from github: http://github.com/aurelian/ruby-stemmer
+* Make your feature addition or bug fix: http://github.com/aurelian/ruby-stemmer/issues
+* Add tests for it. This is important so I don't break it in a
+  future version unintentionally.
+* Commit, do not mess with rakefile, version, or history.
+
+  if you want to have your own version, that is fine but
+  bump version in a commit by itself I can ignore when I pull
+* Send me a pull request. Bonus points for topic branches.
+
+== Copyright
+
+Copyright (c) 2009 Aurelian Oancea. See MIT-LICENSE for details.
+
+== Contributors
+
+
+
+== Real life usage
+
+
+
