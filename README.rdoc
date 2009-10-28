@@ -33,7 +33,7 @@ For more details about libstemmer_c please visit http://snowball.tartarus.org.
 
 === More details 
 
-* RDoc: http://ruby-stemmer.rubyforge.com/ruby-stemmer
+* RDoc: http://ruby-stemmer.rubyforge.org/ruby-stemmer
 * Test: http://github.com/aurelian/ruby-stemmer/blob/master/test/lingua/test_stemmer.rb
 
 == Install
