@@ -19,6 +19,6 @@ module Lingua
   end
 
   class Stemmer
-    VERSION = File.read(File.expand_path(File.join(File.dirname(__FILE__), "..", "..", "VERSION")))
+    VERSION = File.read(File.expand_path(File.join(File.dirname(__FILE__), "..", "..", "VERSION"))).strip!
   end
 end
