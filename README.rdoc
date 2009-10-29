@@ -5,7 +5,7 @@ Ruby-Stemmer exposes SnowBall API to Ruby.
 This package includes libstemmer_c library released under BSD licence 
 and available for free at: http://snowball.tartarus.org/dist/libstemmer_c.tgz.
 
-For more details about libstemmer_c please visit http://snowball.tartarus.org.
+For more details about libstemmer_c please visit the {SnowBall website}[http://snowball.tartarus.org].
 
 == Usage
 
@@ -33,8 +33,8 @@ For more details about libstemmer_c please visit http://snowball.tartarus.org.
 
 === More details 
 
-* RDoc: http://ruby-stemmer.rubyforge.org/ruby-stemmer
-* Test: http://github.com/aurelian/ruby-stemmer/blob/master/test/lingua/test_stemmer.rb
+* Complete API in {RDoc format}[http://ruby-stemmer.rubyforge.org/ruby-stemmer]
+* More usage on the {test file}[http://github.com/aurelian/ruby-stemmer/blob/master/test/lingua/test_stemmer.rb]
 
 == Install
 
@@ -62,13 +62,13 @@ For further reference on stem vs. root, please check wikipedia articles on the t
 
 == TODO
 
-* Open issues: http://github.com/aurelian/ruby-stemmer/issues
+* {Open issues}[http://github.com/aurelian/ruby-stemmer/issues]
 * Windows Support -> see rake-compiler to cross-compile a dll (with the gem and nokogiri Rakefile).
 
 == Note on Patches/Pull Requests
  
-* Fork the project from github: http://github.com/aurelian/ruby-stemmer
-* Make your feature addition or bug fix: http://github.com/aurelian/ruby-stemmer/issues
+* Fork the project from {github}[http://github.com/aurelian/ruby-stemmer]
+* Make your feature addition or {bug fix}[http://github.com/aurelian/ruby-stemmer/issues]
 * Add tests for it. This is important so I don't break it in a
   future version unintentionally.
 * Commit, do not mess with rakefile, version, or history.
@@ -79,15 +79,15 @@ For further reference on stem vs. root, please check wikipedia articles on the t
 
 == Alternative Stemmers for Ruby
 
-* stemmer4r: http://rubyforge.org/projects/stemmer4r (ext)
-* fast-stemmer: http://github.com/romanbsd/fast-stemmer (ext)
-* stemmer: http://rubyforge.org/projects/stemmer (pure ruby)
-* uea-stemmer: http://github.com/ealdent/uea-stemmer
+* {stemmer4r}[http://rubyforge.org/projects/stemmer4r] (ext)
+* {fast-stemmer}[http://github.com/romanbsd/fast-stemmer] (ext)
+* {uea-stemmer}[http://github.com/ealdent/uea-stemmer] (ext)
+* {stemmer}[http://rubyforge.org/projects/stemmer] (pure ruby)
 * [add yours]
 
 == Copyright
 
-Copyright (c) 2009 Aurelian Oancea. See MIT-LICENSE for details.
+Copyright (c) 2008,2009 {Aurelian Oancea}[http://locknet.ro]. See MIT-LICENSE for details.
 
 == Contributors
 
@@ -96,5 +96,5 @@ Copyright (c) 2009 Aurelian Oancea. See MIT-LICENSE for details.
 
 == Real life usage
 
-* http://planet33.ru is using Ruby-Stemmer together with Classifier (http://github.com/yury/classifier) to automatically rate places based on users comments
+* http://planet33.ru is using Ruby-Stemmer together with {Classifier}[http://github.com/yury/classifier] to automatically rate places based on users comments
 
