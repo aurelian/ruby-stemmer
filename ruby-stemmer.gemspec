@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{ruby-stemmer}
-  s.version = "0.6.4"
+  s.version = "0.7.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Aurelian Oancea", "Yury Korolev"]
-  s.date = %q{2009-10-28}
+  s.date = %q{2009-10-29}
   s.description = %q{Expose the bundled libstemmer_c library to Ruby.}
   s.email = %q{oancea@gmail.com}
   s.extensions = ["ext/lingua/extconf.rb"]
@@ -23,7 +23,6 @@ Gem::Specification.new do |s|
      "VERSION",
      "ext/lingua/extconf.rb",
      "ext/lingua/stemmer.c",
-     "lib/lingua.rb",
      "lib/lingua/stemmer.rb",
      "libstemmer_c/MANIFEST",
      "libstemmer_c/Makefile",
