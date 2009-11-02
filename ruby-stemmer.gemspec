@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
      "lib/lingua/stemmer.rb",
      "libstemmer_c/MANIFEST",
      "libstemmer_c/Makefile",
+     "libstemmer_c/Makefile.windows",
      "libstemmer_c/README",
      "libstemmer_c/examples/stemwords.c",
      "libstemmer_c/include/libstemmer.h",
