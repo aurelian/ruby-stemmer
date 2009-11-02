@@ -14,7 +14,7 @@ begin
     gem.extensions = ["ext/lingua/extconf.rb"]
     gem.rubyforge_project = "ruby-stemmer"
     gem.files = FileList['lib/**/*.rb', 'README.rdoc', 'MIT-LICENSE', 'VERSION', 'Rakefile', 'libstemmer_c/**/*', 'ext/**/*', 'test/**/*']
-    %w(ext/lingua/*.so ext/lingua/*.bundle ext/lingua/Makefile ext/lingua/mkmf.log ext/lingua/*.o libstemmer_c/**/*.o).each do | f |
+    %w(ext/lingua/*.so ext/lingua/*.bundle ext/lingua/Makefile ext/lingua/mkmf.log ext/lingua/*.o libstemmer_c/**/*.o libstemmer_c/stemwords).each do | f |
       gem.files.exclude f
     end
   end
