@@ -17,12 +17,15 @@ if RUBY_PLATFORM =~ /darwin/
     exit
   end
 end
-# make this stuff
-system "cd #{LIBSTEMMER}; #{make} libstemmer.o; cd #{ROOT};"
-exit unless $? == 0
 
-$CFLAGS  += " -I#{File.join(LIBSTEMMER, 'include')} "
-$libs    += " -L#{LIBSTEMMER} #{File.join(LIBSTEMMER, 'libstemmer.o')} "
+# make libstemmer_c. unless we're cross-compiling.
+unless RUBY_PLATFORM =~ /i386-mingw32/
+  system "cd #{LIBSTEMMER}; #{make} libstemmer.o; cd #{ROOT};"
+  exit unless $? == 0
+end
+
+$CFLAGS  += " -I#{File.expand_path(File.join(LIBSTEMMER, 'include'))} "
+$libs    += " -L#{LIBSTEMMER} #{File.expand_path(File.join(LIBSTEMMER, 'libstemmer.o'))} "
 
 if have_header("libstemmer.h")
   create_makefile("lingua/stemmer_native")
