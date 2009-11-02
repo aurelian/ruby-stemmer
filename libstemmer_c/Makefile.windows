@@ -1,0 +1,14 @@
+include mkinc.mak
+
+AR=/usr/local/i386-mingw32-4.3.0/bin/i386-mingw32-ar
+CC=/usr/local/i386-mingw32-4.3.0/bin/i386-mingw32-gcc
+
+CFLAGS=-Iinclude
+
+all: libstemmer.o stemwords
+libstemmer.o: $(snowball_sources:.c=.o)
+	$(AR) -cru $@ $^
+stemwords: examples/stemwords.o libstemmer.o
+	$(CC) -o $@ $^
+clean:
+	rm -f stemwords *.o src_c/*.o runtime/*.o libstemmer/*.o
