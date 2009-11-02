@@ -5,6 +5,7 @@ begin
   require 'jeweler'
   JEWLER = Jeweler::Tasks.new do |gem|
     gem.name = "ruby-stemmer"
+    gem.version = File.read(File.expand_path(File.join(File.dirname(__FILE__),"VERSION"))).strip!
     gem.summary = %Q{Expose libstemmer_c to Ruby.}
     gem.description = %Q{Expose the bundled libstemmer_c library to Ruby.}
     gem.email = "oancea@gmail.com"
@@ -55,6 +56,7 @@ require "rake/extensiontask"
 Rake::ExtensionTask.new(JEWLER.gemspec.name, JEWLER.gemspec) do |ext|
   ext.lib_dir = File.join(*['lib', 'lingua', ENV['FAT_DIR']].compact)
   ext.ext_dir = File.join 'ext', 'lingua'
+  ext.cross_compile = true
   ext.name    = 'stemmer_native'
 end
 
