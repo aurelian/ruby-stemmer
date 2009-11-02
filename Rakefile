@@ -53,6 +53,8 @@ task :default => :test
 gem 'rake-compiler', '>= 0.4.1'
 require "rake/extensiontask"
 
+CLOBBER.include("libstemmer_c/**/*.o")
+
 Rake::ExtensionTask.new(JEWLER.gemspec.name, JEWLER.gemspec) do |ext|
   ext.lib_dir = File.join(*['lib', 'lingua', ENV['FAT_DIR']].compact)
   ext.ext_dir = File.join 'ext', 'lingua'
