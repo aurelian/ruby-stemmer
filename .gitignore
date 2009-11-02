@@ -1,4 +1,6 @@
 rdoc
+tmp
+libstemmer_c/stemwords
 pkg/*
 *.o
 *.so
