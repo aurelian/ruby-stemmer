@@ -5,24 +5,42 @@ else
 end
 
 module Lingua
-
   def self.stemmer(o, options={})
-    _stemmer= Stemmer.new({:language => "en", :encoding => "UTF_8"}.merge(options))
-    words= o.kind_of?(Array)? o.map{|e|e.to_s} : [o.to_s]
-    results = [] unless block_given?
-    words.each do | word |
-      result = _stemmer.stem(word)
+    stemmer = Stemmer.new(options)
+
+    words = Array(o).map { |e| e.to_s }
+
+    results = []
+    words.each do |word|
+      result = stemmer.stem(word)
       if block_given?
         yield result
       else
         results << result
       end
     end
-    return (results.length == 1)? results[0] : results unless block_given?
-    _stemmer
+
+    return stemmer if block_given?
+    results.length == 1 ? results[0] : results
   end
 
   class Stemmer
     VERSION = File.read(File.expand_path(File.join(File.dirname(__FILE__), "..", "..", "VERSION"))).strip!
+
+    attr_reader :language
+    attr_reader :encoding
+
+    # Creates a new Stemmer, pass <tt>:language</tt> and <tt>:encoding</tt>
+    # as arguments to change encoding or language, otherwise english with UTF_8
+    # will be used
+    #
+    #   require 'lingua/stemmer'
+    #   s = Lingua::Stemmer.new :language => 'fr'
+    #
+    def initialize options = {}
+      @language = (options[:language] || 'en').to_s
+      @encoding = (options[:encoding] || 'UTF_8').to_s
+      native_init @language, @encoding
+    end
   end
 end

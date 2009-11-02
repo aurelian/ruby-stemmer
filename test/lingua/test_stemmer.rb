@@ -38,4 +38,11 @@ class TestStemmer < Test::Unit::TestCase
     assert_kind_of Array, results
   end
 
+  def test_stemmer_subclass
+    assert_raises(RuntimeError) do
+      Class.new(Lingua::Stemmer) {
+        def native_init a, b; end
+      }.new.stem('cow')
+    end
+  end
 end
