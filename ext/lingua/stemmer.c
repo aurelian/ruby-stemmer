@@ -56,7 +56,7 @@ rb_stemmer_stem(VALUE self, VALUE word) {
   struct sb_stemmer * stemmer;
 
   Data_Get_Struct(self, struct sb_stemmer, stemmer);
-  if(!stemmer) rb_raise(rb_eRuntimeError, "Stemmer not initialize");
+  if(!stemmer) rb_raise(rb_eRuntimeError, "Stemmer is not initialized");
 
   VALUE s_word = rb_String(word);
   const sb_symbol * stemmed = sb_stemmer_stem(stemmer,
