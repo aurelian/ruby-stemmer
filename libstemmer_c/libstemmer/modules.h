@@ -8,6 +8,7 @@
  * russian, spanish, swedish, turkish
  */
 
+#include "../src_c/stem_ISO_8859_1_latin.h"
 #include "../src_c/stem_ISO_8859_1_danish.h"
 #include "../src_c/stem_UTF_8_danish.h"
 #include "../src_c/stem_ISO_8859_1_dutch.h"
@@ -68,6 +69,7 @@ struct stemmer_modules {
   int (*stem)(struct SN_env *);
 };
 static struct stemmer_modules modules[] = {
+  {"latin", ENC_ISO_8859_1, latin_ISO_8859_1_create_env, latin_ISO_8859_1_close_env, latin_ISO_8859_1_stem},
   {"da", ENC_ISO_8859_1, danish_ISO_8859_1_create_env, danish_ISO_8859_1_close_env, danish_ISO_8859_1_stem},
   {"da", ENC_UTF_8, danish_UTF_8_create_env, danish_UTF_8_close_env, danish_UTF_8_stem},
   {"dan", ENC_ISO_8859_1, danish_ISO_8859_1_create_env, danish_ISO_8859_1_close_env, danish_ISO_8859_1_stem},

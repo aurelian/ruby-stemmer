@@ -17,6 +17,12 @@ class TestStemmer < Test::Unit::TestCase
     end
   end
 
+  def test_latin
+    assert_nothing_raised do
+      ::Lingua::Stemmer.new :language => "latin", :encoding => "ISO_8859_1"
+    end
+  end
+
   def test_stem
     s= ::Lingua::Stemmer.new(:language => "en", :encoding => "UTF_8")
     assert_equal s.stem("obnoxious"), "obnoxi"
