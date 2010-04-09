@@ -4,10 +4,9 @@ Ruby-Stemmer exposes SnowBall API to Ruby.
 
 This package includes libstemmer_c library released under BSD licence 
 and available for free at: http://snowball.tartarus.org/dist/libstemmer_c.tgz.
-
 For more details about libstemmer_c please visit the {SnowBall website}[http://snowball.tartarus.org].
 
-This package includes support for latin language (at libstemmer_c level), 
+This package includes support for latin language (added at libstemmer_c level), 
 generated with the snowball compiler from {schinke contribution}[http://snowball.tartarus.org/otherapps/schinke/intro.html].
 
 == Usage
@@ -62,12 +61,6 @@ For further reference on stem vs. root, please check wikipedia articles on the t
 
 * http://en.wikipedia.org/wiki/Stem_%28linguistics%29
 * http://en.wikipedia.org/wiki/Root_%28linguistics%29
-
-== Note on Latin
-
-Latin is limited to ISO_8859_1 and you'll need to pass the encoding when creating a latin stemmer:
-
-  Lingua::Stemmer.new(:language => 'latin', :encoding => 'ISO_8859_1')
 
 == TODO
 
