@@ -9,6 +9,7 @@
 
 snowball_sources= \
   src_c/stem_ISO_8859_1_latin.c \
+  src_c/stem_UTF_8_latin.c \
   src_c/stem_ISO_8859_1_danish.c \
   src_c/stem_UTF_8_danish.c \
   src_c/stem_ISO_8859_1_dutch.c \
@@ -45,6 +46,8 @@ snowball_sources= \
   libstemmer/libstemmer.c
 
 snowball_headers= \
+  src_c/stem_ISO_8859_1_latin.h \
+  src_c/stem_UTF_8_latin.h \
   src_c/stem_ISO_8859_1_danish.h \
   src_c/stem_UTF_8_danish.h \
   src_c/stem_ISO_8859_1_dutch.h \

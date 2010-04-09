@@ -9,6 +9,7 @@
 # List all the main algorithms for each language, in UTF-8, and also with
 # the most commonly used encoding.
 
+latin           UTF_8,ISO_8859_1        latin
 danish          UTF_8,ISO_8859_1        danish,da,dan
 dutch           UTF_8,ISO_8859_1        dutch,nl,dut,nld
 english         UTF_8,ISO_8859_1        english,en,eng

@@ -8,6 +8,7 @@
 # russian, spanish, swedish, turkish
 
 snowball_sources= \
+  src_c/stem_UTF_8_latin.c \
   src_c/stem_UTF_8_danish.c \
   src_c/stem_UTF_8_dutch.c \
   src_c/stem_UTF_8_english.c \
@@ -29,6 +30,7 @@ snowball_sources= \
   libstemmer/libstemmer_utf8.c
 
 snowball_headers= \
+  src_c/stem_UTF_8_latin.h \
   src_c/stem_UTF_8_danish.h \
   src_c/stem_UTF_8_dutch.h \
   src_c/stem_UTF_8_english.h \
