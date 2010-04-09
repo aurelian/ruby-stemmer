@@ -243,7 +243,6 @@ static const symbol s_4[] = { 'q', 'u', 'e' };
 static const symbol s_5[] = { 'i' };
 static const symbol s_6[] = { 'b', 'i' };
 static const symbol s_7[] = { 'e', 'r', 'i' };
-static const symbol s_8[] = { ' ' };
 
 static int r_map_letters(struct SN_env * z) {
     {   int c1 = z->c; /* do, line 14 */
@@ -433,16 +432,6 @@ lab0:
     {   int c_keep = z->c;
         int ret = insert_v(z, z->c, z->l, z->S[0]); /* = noun_form, line 74 */
         z->c = c_keep;
-        if (ret < 0) return ret;
-    }
-    z->c = z->l; /* tolimit, line 76 */
-    {   int i; for (i = (25 - SIZE(z->S[0])); i > 0; i--) /* loop, line 76 */
-        {               {   int ret = insert_s(z, z->c, z->c, 1, s_8); /* <+, line 76 */
-                if (ret < 0) return ret;
-            }
-        }
-    }
-    {   int ret = insert_v(z, z->c, z->c, z->S[1]); /* <+ verb_form, line 77 */
         if (ret < 0) return ret;
     }
     return 1;
