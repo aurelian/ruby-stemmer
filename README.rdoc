@@ -4,10 +4,10 @@ Ruby-Stemmer exposes SnowBall API to Ruby.
 
 This package includes libstemmer_c library released under BSD licence 
 and available for free at: http://snowball.tartarus.org/dist/libstemmer_c.tgz.
-For more details about libstemmer_c please visit the {SnowBall website}[http://snowball.tartarus.org].
+Support for latin language is also included and it has been generated with the snowball compiler using 
+{schinke contribution}[http://snowball.tartarus.org/otherapps/schinke/intro.html]
 
-This package includes support for latin language (added at libstemmer_c level), 
-generated with the snowball compiler from {schinke contribution}[http://snowball.tartarus.org/otherapps/schinke/intro.html].
+For more details about libstemmer_c please visit the {SnowBall website}[http://snowball.tartarus.org].
 
 == Usage
 
@@ -100,4 +100,4 @@ Copyright (c) 2008-2010 {Aurelian Oancea}[http://locknet.ro]. See MIT-LICENSE fo
 == Real life usage
 
 * http://planet33.ru is using Ruby-Stemmer together with {Classifier}[http://github.com/yury/classifier] to automatically rate places based on users comments.
-
+* {textamatch_rb}[http://github.com/dimus/taxamatch_rb] is using the Ruby-Stemmer to catch errors in suffixes while it discovers if two scientific names are actually the same.
