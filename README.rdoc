@@ -30,12 +30,15 @@ For more details about libstemmer_c please visit the {SnowBall website}[http://s
 
 === Rails
   
-  # in config/environment.rb:
+  # Rails2: -- config/environment.rb:
   config.gem 'ruby-stemmer', :version => '>=0.6.2', :lib => 'lingua/stemmer'
+  
+  # Rails3: -- Gemfile
+  gem 'ruby-stemmer', '>=0.8.3', :lib => 'lingua/stemmer'
 
 === More details 
 
-* Complete API in {RDoc format}[http://ruby-stemmer.rubyforge.org/ruby-stemmer]
+* Complete API in {RDoc format}[http://rdoc.info/github/aurelian/ruby-stemmer/master/frames]
 * More usage on the {test file}[http://github.com/aurelian/ruby-stemmer/blob/master/test/lingua/test_stemmer.rb]
 
 == Install
@@ -89,7 +92,7 @@ For further reference on stem vs. root, please check wikipedia articles on the t
 
 == Copyright
 
-Copyright (c) 2008-2010 {Aurelian Oancea}[http://locknet.ro]. See MIT-LICENSE for details.
+Copyright (c) 2008-2011 {Aurelian Oancea}[http://locknet.ro]. See MIT-LICENSE for details.
 
 == Contributors
 

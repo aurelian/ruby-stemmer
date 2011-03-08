@@ -18,12 +18,8 @@ begin
       gem.files.exclude f
     end
   end
-  Jeweler::GemcutterTasks.new
-  # Jeweler::RubyforgeTasks.new do |rubyforge|
-  #   rubyforge.doc_task = "rdoc"
-  # end
 rescue LoadError
-  puts "Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler"
+  puts "Jeweler (or a dependency) not available. Install it with: gem install jeweler"
 end
 
 require 'rake/testtask'
@@ -42,7 +38,7 @@ begin
   end
 rescue LoadError
   task :rcov do
-    abort "RCov is not available. In order to run rcov, you must: sudo gem install spicycode-rcov"
+    abort "RCov is not available. In order to run rcov, you must: gem install rcov"
   end
 end
 
