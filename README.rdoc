@@ -1,4 +1,4 @@
-= Ruby-Stemmer
+= Ruby-Stemmer {Project Status}[http://stillmaintained.com/aurelian/ruby-stemmer.png]
 
 Ruby-Stemmer exposes SnowBall API to Ruby.
 
@@ -88,7 +88,7 @@ For further reference on stem vs. root, please check wikipedia articles on the t
 * {fast-stemmer}[http://github.com/romanbsd/fast-stemmer] (ext)
 * {uea-stemmer}[http://github.com/ealdent/uea-stemmer] (ext)
 * {stemmer}[http://rubyforge.org/projects/stemmer] (pure ruby)
-* [add yours]
+* add yours
 
 == Copyright
 
@@ -103,4 +103,3 @@ Copyright (c) 2008-2011 {Aurelian Oancea}[http://locknet.ro]. See MIT-LICENSE fo
 == Real life usage
 
 * http://planet33.ru is using Ruby-Stemmer together with {Classifier}[http://github.com/yury/classifier] to automatically rate places based on users comments.
-* {textamatch_rb}[http://github.com/dimus/taxamatch_rb] is using the Ruby-Stemmer to catch errors in suffixes while it discovers if two scientific names are actually the same.
