@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'helper'
 
 class TestStemmer < Test::Unit::TestCase
@@ -49,6 +50,18 @@ class TestStemmer < Test::Unit::TestCase
       Class.new(Lingua::Stemmer) {
         def native_init a, b; end
       }.new.stem('cow')
+    end
+  end
+
+  if RUBY_VERSION >= '1.9'
+    def test_string_encoding
+      word = "așezare"
+
+      stem = ::Lingua.stemmer(word, :language => "ro", :encoding => "UTF_8")
+      assert_equal word.encoding, stem.encoding
+
+      s = ::Lingua::Stemmer.new(:language => "ro", :encoding => "UTF_8")
+      assert_equal s.stem(word).encoding, word.encoding
     end
   end
 end
