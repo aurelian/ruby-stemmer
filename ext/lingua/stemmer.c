@@ -1,6 +1,27 @@
 #include "ruby.h"
 #include <libstemmer.h>
 
+
+#ifdef HAVE_RUBY_ENCODING_H
+
+#include <ruby/encoding.h>
+
+#define ENCODED_STR_NEW2(str, encoding) \
+  ({ \
+   VALUE _string = rb_str_new2((const char *)str); \
+   int _enc = rb_enc_find_index(encoding); \
+   rb_enc_associate_index(_string, _enc); \
+   _string; \
+   })
+
+#else
+
+#define ENCODED_STR_NEW2(str, encoding) \
+  rb_str_new2((const char *)str)
+
+#endif
+
+
 VALUE rb_mLingua;
 VALUE rb_cStemmer;
 VALUE rb_eStemmerError;
@@ -63,7 +84,8 @@ rb_stemmer_stem(VALUE self, VALUE word) {
       (sb_symbol *)RSTRING_PTR(s_word),
       RSTRING_LEN(s_word)
   );
-  return rb_str_new2((char *)stemmed);
+
+  return ENCODED_STR_NEW2((char *)stemmed, "UTF-8");
 }
 
 static void
