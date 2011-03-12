@@ -7,14 +7,22 @@ LIBSTEMMER = File.join(ROOT, 'libstemmer_c')
 # build libstemmer_c
 # FreeBSD make is gmake
 make= (RUBY_PLATFORM =~ /freebsd/)? 'gmake' : 'make'
+
 # MacOS architecture mess up
 if RUBY_PLATFORM =~ /darwin/
+  # see: #issue/3, #issue/5
   begin
     ENV['ARCHFLAGS']= "-arch " + %x[file #{File.expand_path(File.join(Config::CONFIG['bindir'], Config::CONFIG['RUBY_INSTALL_NAME']))}].strip!.match(/executable (.+)$/)[1] unless ENV['ARCHFLAGS'].nil?
   rescue
     $stderr << "Failed to get your ruby executable architecture.\n"
     $stderr << "Please specify one using $ARCHFLAGS environment variable.\n"
     exit
+  end
+  # see: #issue/9, #issue/6
+  # see: man compat
+  if ENV['COMMAND_MODE'] == 'legacy'
+    $stdout << "Setting compat mode to unix2003\n."
+    ENV['COMMAND_MODE']= 'unix2003'
   end
 end
 
