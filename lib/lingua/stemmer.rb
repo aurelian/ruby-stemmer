@@ -37,10 +37,24 @@ module Lingua
     #   require 'lingua/stemmer'
     #   s = Lingua::Stemmer.new :language => 'fr'
     #
-    def initialize options = {}
+    def initialize(options={})
       @language = (options[:language] || 'en').to_s
       @encoding = (options[:encoding] || 'UTF_8').to_s
-      native_init @language, @encoding
+
+      if RUBY_VERSION >= "1.9"
+        if not @encoding.is_a?(Encoding)
+          @encoding = Encoding.find(@encoding.gsub("_", "-"))
+        end
+      else
+        @encoding = @encoding.upcase.gsub("-", "_")
+      end
+
+      native_init(@language, native_encoding(@encoding))
+    end
+
+  private
+    def native_encoding(enc)
+      RUBY_VERSION >= "1.9" ? enc.name.gsub('-', '_') : enc
     end
   end
 end

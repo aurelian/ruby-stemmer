@@ -36,7 +36,12 @@ class TestStemmer < Test::Unit::TestCase
       assert_equal word, "install"
     end
     assert_kind_of ::Lingua::Stemmer, stemmer
-    assert_equal stemmer.encoding, "UTF_8"
+
+    if RUBY_VERSION >= '1.9'
+      assert_equal stemmer.encoding, Encoding::UTF_8
+    else
+      assert_equal stemmer.encoding, "UTF_8"
+    end
   end
 
   def test_array_stemmer
@@ -53,6 +58,29 @@ class TestStemmer < Test::Unit::TestCase
     end
   end
 
+  def test_default_encoding_option
+    if RUBY_VERSION >= '1.9'
+      assert_equal ::Lingua::Stemmer.new.encoding, Encoding::UTF_8
+    else
+      assert_equal ::Lingua::Stemmer.new.encoding, "UTF_8"
+    end
+  end
+
+  def test_different_encoding_options
+    if RUBY_VERSION >= '1.9'
+      assert_equal ::Lingua::Stemmer.new(:encoding => "ISO_8859_1").encoding, Encoding::ISO_8859_1
+      assert_equal ::Lingua::Stemmer.new(:encoding => "UTF-8").encoding, Encoding::UTF_8
+      assert_equal ::Lingua::Stemmer.new(:encoding => "utf-8").encoding, Encoding::UTF_8
+      assert_equal ::Lingua::Stemmer.new(:encoding => :ISO_8859_1).encoding, Encoding::ISO_8859_1
+      assert_equal ::Lingua::Stemmer.new(:encoding => Encoding::UTF_8).encoding, Encoding::UTF_8
+    else
+      assert_equal ::Lingua::Stemmer.new(:encoding => "ISO_8859_1").encoding, "ISO_8859_1"
+      assert_equal ::Lingua::Stemmer.new(:encoding => "UTF-8").encoding, "UTF_8"
+      assert_equal ::Lingua::Stemmer.new(:encoding => "utf-8").encoding, "UTF_8"
+      assert_equal ::Lingua::Stemmer.new(:encoding => :ISO_8859_1).encoding, "ISO_8859_1"
+    end
+  end
+
   if RUBY_VERSION >= '1.9'
     def test_string_encoding
       word = "așezare"
@@ -62,6 +90,10 @@ class TestStemmer < Test::Unit::TestCase
 
       s = ::Lingua::Stemmer.new(:language => "ro", :encoding => "UTF_8")
       assert_equal s.stem(word).encoding, word.encoding
+
+      stem = ::Lingua.stemmer("installation", :language => "fr", :encoding => "ISO-8859-1")
+      assert_equal stem.encoding, Encoding::ISO_8859_1
     end
   end
+
 end

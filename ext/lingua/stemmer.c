@@ -9,7 +9,7 @@
 #define ENCODED_STR_NEW2(str, encoding) \
   ({ \
    VALUE _string = rb_str_new2((const char *)str); \
-   int _enc = rb_enc_find_index(encoding); \
+   int _enc = rb_enc_get_index(encoding); \
    rb_enc_associate_index(_string, _enc); \
    _string; \
    })
@@ -85,7 +85,8 @@ rb_stemmer_stem(VALUE self, VALUE word) {
       RSTRING_LEN(s_word)
   );
 
-  return ENCODED_STR_NEW2((char *)stemmed, "UTF-8");
+  VALUE rb_enc = rb_iv_get(self, "@encoding");
+  return ENCODED_STR_NEW2((char *)stemmed, rb_enc);
 }
 
 static void
@@ -107,7 +108,7 @@ void Init_stemmer_native() {
   rb_mLingua = rb_define_module("Lingua");
   rb_cStemmer = rb_define_class_under(rb_mLingua, "Stemmer", rb_cObject);
   rb_define_alloc_func(rb_cStemmer, sb_stemmer_alloc);
-  rb_eStemmerError = rb_define_class_under(rb_mLingua, "StemmerError", rb_eException);  
+  rb_eStemmerError = rb_define_class_under(rb_mLingua, "StemmerError", rb_eException);
   rb_define_private_method(rb_cStemmer, "native_init", rb_stemmer_init, 2);
   rb_define_method(rb_cStemmer, "stem", rb_stemmer_stem, 1);
 }
