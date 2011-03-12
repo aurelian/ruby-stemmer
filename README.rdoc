@@ -3,7 +3,8 @@
 Ruby-Stemmer exposes SnowBall API to Ruby.
 
 This package includes libstemmer_c library released under BSD licence 
-and available for free at: http://snowball.tartarus.org/dist/libstemmer_c.tgz.
+and available for free [here]{http://snowball.tartarus.org/dist/libstemmer_c.tgz}.
+
 Support for latin language is also included and it has been generated with the snowball compiler using 
 {schinke contribution}[http://snowball.tartarus.org/otherapps/schinke/intro.html]
 
@@ -96,10 +97,12 @@ Copyright (c) 2008-2011 {Aurelian Oancea}[http://locknet.ro]. See MIT-LICENSE fo
 
 == Contributors
 
-* Aurelian Oancea
-* Yury Korolev - various bug fixes
-* Aaron Patterson - rake compiler (windows support), code cleanup
+* {Aurelian Oancea}[https://github.com/aurelian]
+* {Yury Korolev}[https://github.com/yury] - various bug fixes
+* {Aaron Patterson}[https://github.com/tenderlove] - rake compiler (windows support), code cleanup
+* {Damián Silvani}[https://github.com/munshkr] - Ruby 1.9 encoding
 
 == Real life usage
-
 * http://planet33.ru is using Ruby-Stemmer together with {Classifier}[http://github.com/yury/classifier] to automatically rate places based on users comments.
+
+# encoding: utf-8

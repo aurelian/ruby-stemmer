@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{ruby-stemmer}
-  s.version = "0.8.5"
+  s.version = "0.9.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Aurelian Oancea", "Yury Korolev"]
-  s.date = %q{2011-03-08}
+  s.date = %q{2011-03-12}
   s.description = %q{Expose the bundled libstemmer_c library to Ruby.}
   s.email = %q{oancea@gmail.com}
   s.extensions = ["ext/lingua/extconf.rb"]
@@ -114,7 +114,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/aurelian/ruby-stemmer}
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{ruby-stemmer}
-  s.rubygems_version = %q{1.3.7}
+  s.rubygems_version = %q{1.6.2}
   s.summary = %q{Expose libstemmer_c to Ruby.}
   s.test_files = [
     "test/helper.rb",
@@ -122,7 +122,6 @@ Gem::Specification.new do |s|
   ]
 
   if s.respond_to? :specification_version then
-    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
