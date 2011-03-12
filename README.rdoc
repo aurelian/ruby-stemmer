@@ -3,10 +3,10 @@
 Ruby-Stemmer exposes SnowBall API to Ruby.
 
 This package includes libstemmer_c library released under BSD licence 
-and available for free [here]{http://snowball.tartarus.org/dist/libstemmer_c.tgz}.
+and available for free {here}[http://snowball.tartarus.org/dist/libstemmer_c.tgz].
 
 Support for latin language is also included and it has been generated with the snowball compiler using 
-{schinke contribution}[http://snowball.tartarus.org/otherapps/schinke/intro.html]
+{schinke contribution}[http://snowball.tartarus.org/otherapps/schinke/intro.html].
 
 For more details about libstemmer_c please visit the {SnowBall website}[http://snowball.tartarus.org].
 
