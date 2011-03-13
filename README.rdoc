@@ -35,7 +35,7 @@ For more details about libstemmer_c please visit the {SnowBall website}[http://s
   config.gem 'ruby-stemmer', :version => '>=0.6.2', :lib => 'lingua/stemmer'
   
   # Rails3: -- Gemfile
-  gem 'ruby-stemmer', '>=0.8.3', :lib => 'lingua/stemmer'
+  gem 'ruby-stemmer', '>=0.8.3', :require => 'lingua/stemmer'
 
 === More details 
 
