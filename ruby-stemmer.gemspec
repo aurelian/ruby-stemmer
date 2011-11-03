@@ -4,17 +4,18 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{ruby-stemmer}
-  s.version = "0.9.1"
+  s.name = "ruby-stemmer"
+  s.version = "0.9.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Aurelian Oancea", "Yury Korolev"]
-  s.date = %q{2011-03-13}
-  s.description = %q{Expose the bundled libstemmer_c library to Ruby.}
-  s.email = %q{oancea@gmail.com}
+  s.date = "2011-11-03"
+  s.description = "Expose the bundled libstemmer_c library to Ruby."
+  s.email = "oancea@gmail.com"
   s.extensions = ["ext/lingua/extconf.rb"]
   s.extra_rdoc_files = [
-    "README.rdoc"
+    "README.rdoc",
+    "TODO"
   ]
   s.files = [
     "MIT-LICENSE",
@@ -111,15 +112,11 @@ Gem::Specification.new do |s|
     "test/helper.rb",
     "test/lingua/test_stemmer.rb"
   ]
-  s.homepage = %q{http://github.com/aurelian/ruby-stemmer}
+  s.homepage = "http://github.com/aurelian/ruby-stemmer"
   s.require_paths = ["lib"]
-  s.rubyforge_project = %q{ruby-stemmer}
-  s.rubygems_version = %q{1.6.2}
-  s.summary = %q{Expose libstemmer_c to Ruby.}
-  s.test_files = [
-    "test/helper.rb",
-    "test/lingua/test_stemmer.rb"
-  ]
+  s.rubyforge_project = "ruby-stemmer"
+  s.rubygems_version = "1.8.11"
+  s.summary = "Expose libstemmer_c to Ruby."
 
   if s.respond_to? :specification_version then
     s.specification_version = 3

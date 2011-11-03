@@ -1,7 +1,8 @@
 include mkinc.mak
 
-AR=/usr/local/i386-mingw32-4.3.0/bin/i386-mingw32-ar
-CC=/usr/local/i386-mingw32-4.3.0/bin/i386-mingw32-gcc
+AR=i686-w64-mingw32-ar
+CC=i686-w64-mingw32-gcc
+LD=i686-w64-mingw32-ld
 
 CFLAGS=-Iinclude
 
