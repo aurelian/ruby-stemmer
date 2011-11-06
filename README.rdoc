@@ -48,7 +48,17 @@ For more details about libstemmer_c please visit the {SnowBall website}[http://s
 
  gem install ruby-stemmer
 
-Please not that Windows is not supported at this time.
+==== Windows
+
+There's also a Windows (Fat bin) compiled against ruby 1.9.3 and ruby 1.8.7.
+
+ gem install ruby-stemmer --platform=x86-mingw32
+
+As far as I know the above should work with {rubyinstaller}[http://rubyinstaller.org/]. If if fails, you could try with:
+
+ gem install ruby-stemmer --platform=x86-mswin32
+
+{It's known}[http://cl.ly/BX9o] to work under Windows XP.
 
 === Development version
 
@@ -69,7 +79,6 @@ For further reference on stem vs. root, please check wikipedia articles on the t
 == TODO
 
 * {Open issues}[http://github.com/aurelian/ruby-stemmer/issues]
-* Release Windows Gem
 
 == Note on Patches/Pull Requests
  

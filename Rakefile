@@ -53,7 +53,7 @@ Rake::ExtensionTask.new('ruby-stemmer', $jeweler.jeweler.gemspec) do |ext|
   ext.lib_dir = File.join(*['lib', 'lingua', ENV['FAT_DIR']].compact)
   ext.ext_dir = File.join 'ext', 'lingua'
   ext.cross_compile = true
-  ext.cross_platform = ['i686-mswin32']
+  ext.cross_platform = ['i386-mswin32-60', 'i386-mingw32']
   ext.name    = 'stemmer_native'
 end
 
