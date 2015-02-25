@@ -19,6 +19,8 @@ $jeweler = Jeweler::Tasks.new do |gem|
   %w(ext/lingua/*.so ext/lingua/*.bundle ext/lingua/Makefile ext/lingua/mkmf.log ext/lingua/*.o libstemmer_c/**/*.o libstemmer_c/stemwords).each do | f |
     gem.files.exclude f
   end
+  gem.add_development_dependency 'jeweler'
+  gem.add_development_dependency 'rake-compiler'
 end
 
 Jeweler::GemcutterTasks.new
@@ -43,7 +45,7 @@ rescue LoadError
   end
 end
 
-task :test => :check_dependencies
+task :test => :compile
 
 task :default => :test
 
