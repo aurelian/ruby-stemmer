@@ -4,6 +4,8 @@ else
   require 'lingua/stemmer_native'
 end
 
+require 'lingua/version'
+
 module Lingua
   def self.stemmer(o, options={})
     stemmer = Stemmer.new(options)
@@ -25,7 +27,6 @@ module Lingua
   end
 
   class Stemmer
-    VERSION = File.read(File.expand_path(File.join(File.dirname(__FILE__), "..", "..", "VERSION"))).strip!
 
     attr_reader :language
     attr_reader :encoding
