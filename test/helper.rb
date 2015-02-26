@@ -1,3 +1,8 @@
 require 'rubygems'
-require 'test/unit'
-require 'lingua/stemmer'
+require 'bundler/setup'
+
+require 'minitest/autorun'
+
+$LOAD_PATH.unshift File.expand_path '../lib', __FILE__
+require "lingua/stemmer"
+

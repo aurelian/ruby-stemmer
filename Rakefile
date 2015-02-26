@@ -1,65 +1,30 @@
 require 'rubygems'
-require 'rake'
+require 'bundler/setup'
 
-gem 'rake-compiler', '~>0.7'
-require 'rake/extensiontask'
-
-require 'jeweler'
-$jeweler = Jeweler::Tasks.new do |gem|
-  gem.name = "ruby-stemmer"
-  gem.version = File.read(File.expand_path(File.join(File.dirname(__FILE__),"VERSION"))).strip!
-  gem.summary = %Q{Expose libstemmer_c to Ruby.}
-  gem.description = %Q{Expose the bundled libstemmer_c library to Ruby.}
-  gem.email = "oancea@gmail.com"
-  gem.homepage = "http://github.com/aurelian/ruby-stemmer"
-  gem.authors = ["Aurelian Oancea", "Yury Korolev"]
-  gem.extensions = ["ext/lingua/extconf.rb"]
-  gem.rubyforge_project = "ruby-stemmer"
-  gem.files = FileList['lib/**/*.rb', 'README.rdoc', 'MIT-LICENSE', 'VERSION', 'Rakefile', 'libstemmer_c/**/*', 'ext/**/*', 'test/**/*']
-  %w(ext/lingua/*.so ext/lingua/*.bundle ext/lingua/Makefile ext/lingua/mkmf.log ext/lingua/*.o libstemmer_c/**/*.o libstemmer_c/stemwords).each do | f |
-    gem.files.exclude f
-  end
-  gem.add_development_dependency 'jeweler'
-  gem.add_development_dependency 'rake-compiler'
-end
-
-Jeweler::GemcutterTasks.new
-
+require 'rdoc/task'
 require 'rake/testtask'
+require "bundler/gem_tasks"
+require 'rake/extensiontask'
+require 'rubygems/package_task'
+
+CLOBBER.include("libstemmer_c/**/*.o")
+
+GEMSPEC = Gem::Specification.load("ruby-stemmer.gemspec")
+
 Rake::TestTask.new(:test) do |test|
   test.libs << 'lib' << 'test'
   test.pattern = 'test/**/test_*.rb'
   test.verbose = true
 end
 
-begin
-  require 'rcov/rcovtask'
-  Rcov::RcovTask.new do |test|
-    test.libs << 'test'
-    test.pattern = 'test/**/test_*.rb'
-    test.verbose = true
-  end
-rescue LoadError
-  task :rcov do
-    abort "RCov is not available. In order to run rcov, you must: gem install rcov"
-  end
-end
-
-task :test => :compile
-
-task :default => :test
-
-CLOBBER.include("libstemmer_c/**/*.o")
-
-Rake::ExtensionTask.new('ruby-stemmer', $jeweler.jeweler.gemspec) do |ext|
+Rake::ExtensionTask.new('ruby-stemmer', GEMSPEC) do |ext|
   ext.lib_dir = File.join(*['lib', 'lingua', ENV['FAT_DIR']].compact)
   ext.ext_dir = File.join 'ext', 'lingua'
   ext.cross_compile = true
   ext.cross_platform = ['i386-mswin32-60', 'i386-mingw32']
-  ext.name    = 'stemmer_native'
+  ext.name = 'stemmer_native'
 end
 
-require 'rdoc/task'
 Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
   rdoc.rdoc_dir = 'rdoc'
@@ -70,3 +35,6 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_files.include('ext/lingua/stemmer.c')
   rdoc.rdoc_files.include('MIT-LICENSE')
 end
+
+task :default => [:clobber, :compile, :test]
+
