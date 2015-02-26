@@ -119,7 +119,7 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
   s.summary = "Expose libstemmer_c to Ruby."
   s.add_development_dependency 'rake-compiler', '~> 0.9.2'
-  s.add_development_dependency 'minitest', '~> 5.5.1'
-  s.add_development_dependency 'rdoc', '~> 4.2.0'
+  s.add_development_dependency 'minitest', '~> 5.5', '>= 5.5.1'
+  s.add_development_dependency 'rdoc', '~> 4.2', '>= 4.2.0'
 end
 
