@@ -6,15 +6,16 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    json (1.8.2)
     minitest (5.5.1)
     rake (10.4.2)
     rake-compiler (0.9.5)
       rake
     rdoc (4.2.0)
+      json (~> 1.4)
 
 PLATFORMS
   ruby
-  x86-mingw32
 
 DEPENDENCIES
   minitest (~> 5.5, >= 5.5.1)
