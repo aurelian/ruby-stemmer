@@ -68,6 +68,16 @@ As far as I know the above should work with {rubyinstaller}[http://rubyinstaller
   $ rake compile #<== builds the extension do'h
   $ rake test
 
+==== Cross Compiling
+
+Install {rake-compiler-dev-box}[https://github.com/tjschuck/rake-compiler-dev-box] and follow the setup.
+Inside vagrant box run:
+
+  $ cd /vagrant
+  $ RUBY_CC_VERSION=1.8.7:1.9.3:2.1.5:2.2.0 package_win32_fat_binary ruby-stemmer
+
+Idea is to have same builds as in travis.yml.
+
 == NOT A BUG
 
 The stemming process is an algorithm to allow one to find the stem of an word (not the root of it).
