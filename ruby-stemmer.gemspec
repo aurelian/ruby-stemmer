@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
     "ext/lingua/extconf.rb",
     "ext/lingua/stemmer.c",
     "lib/lingua/stemmer.rb",
+    "lib/lingua/version.rb",
     "libstemmer_c/MANIFEST",
     "libstemmer_c/Makefile",
     "libstemmer_c/Makefile.windows",
