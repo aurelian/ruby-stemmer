@@ -10,6 +10,11 @@ make= (RUBY_PLATFORM =~ /freebsd/)? 'gmake' : 'make'
 
 # MacOS architecture mess up
 if RUBY_PLATFORM =~ /darwin/
+  # Config has been deprecated since 1.9.3, and removed since 2.2.0
+  if defined?(RbConfig)
+    Config = RbConfig
+  end
+
   # see: #issue/3, #issue/5
   begin
     ENV['ARCHFLAGS']= "-arch " + %x[file #{File.expand_path(File.join(Config::CONFIG['bindir'], Config::CONFIG['RUBY_INSTALL_NAME']))}].strip!.match(/executable (.+)$/)[1] unless ENV['ARCHFLAGS'].nil?
