@@ -1,27 +1,27 @@
 # encoding: utf-8
 require 'helper'
 
-class TestStemmer < Test::Unit::TestCase
+class TestStemmer < Minitest::Test
 
   def test_stemmer_creation
     assert_kind_of ::Lingua::Stemmer, ::Lingua::Stemmer.new
   end
 
   def test_exceptions
-    assert_raise ::Lingua::StemmerError do
+    assert_raises ::Lingua::StemmerError do
       # invalid encoding for language
       ::Lingua::Stemmer.new :language => "ro", :encoding => "ISO_8859_1"
     end
-    assert_raise ::Lingua::StemmerError do
+    assert_raises ::Lingua::StemmerError do
       # invalid language
       ::Lingua::Stemmer.new :language => "cat"
     end
   end
 
   def test_latin
-    assert_nothing_raised do
-      ::Lingua::Stemmer.new :language => "latin", :encoding => "ISO_8859_1"
-    end
+    ::Lingua::Stemmer.new :language => "latin", :encoding => "ISO_8859_1"
+  rescue StandardError => error
+    flunk "Expected latin to be loaded but failed with #{error}"
   end
 
   def test_stem

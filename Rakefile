@@ -1,3 +1,6 @@
+require 'rubygems'
+require 'bundler/setup'
+
 require 'rdoc/task'
 require 'rake/testtask'
 require "bundler/gem_tasks"
