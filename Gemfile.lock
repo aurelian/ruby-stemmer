@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ruby-stemmer (0.9.5)
+    ruby-stemmer (0.9.6)
 
 GEM
   remote: https://rubygems.org/
