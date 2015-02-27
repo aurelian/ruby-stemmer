@@ -22,8 +22,9 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/aurelian/ruby-stemmer"
   s.licenses = ["MIT"]
   s.summary = "Expose libstemmer_c to Ruby."
-  s.add_development_dependency 'rake-compiler', '~> 0.9.2'
-  s.add_development_dependency 'minitest', '~> 5.5', '>= 5.5.1'
-  s.add_development_dependency 'rdoc', '~> 4.2', '>= 4.2.0'
+
+  s.add_development_dependency 'rake-compiler', '~> 0.9'
+  s.add_development_dependency 'minitest', '~> 5.5'
+  s.add_development_dependency 'rdoc', '~> 4.2'
 end
 
