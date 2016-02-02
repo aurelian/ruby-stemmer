@@ -50,6 +50,12 @@ class TestStemmer < Minitest::Test
     assert_kind_of Array, results
   end
 
+  def test_array_stemmer_issue_22
+    results= ::Lingua.stemmer(["one"], :language => "de", :encoding => "ISO_8859_1")
+    assert_equal 1, results.size
+    assert_kind_of Array, results
+  end
+
   def test_stemmer_subclass
     assert_raises(RuntimeError) do
       Class.new(Lingua::Stemmer) {
