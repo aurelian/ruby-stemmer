@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ruby-stemmer (0.9.6)
+    ruby-stemmer (1.0.0)
 
 GEM
   remote: https://rubygems.org/
@@ -22,3 +22,6 @@ DEPENDENCIES
   rake-compiler (~> 0.9)
   rdoc (~> 4.2)
   ruby-stemmer!
+
+BUNDLED WITH
+   1.10.6

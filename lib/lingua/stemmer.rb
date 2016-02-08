@@ -23,7 +23,7 @@ module Lingua
     end
 
     return stemmer if block_given?
-    results.length == 1 ? results[0] : results
+    o.kind_of?(String) ? results[0] : results
   end
 
   class Stemmer
