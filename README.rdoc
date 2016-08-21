@@ -2,8 +2,6 @@
 
 Ruby-Stemmer exposes SnowBall API to Ruby.
 
-{Project Status}[http://stillmaintained.com/aurelian/ruby-stemmer.png]
-
 {Travis CI Status}[https://api.travis-ci.org/aurelian/ruby-stemmer.png]
 
 This package includes libstemmer_c library released under BSD licence 
