@@ -2,17 +2,15 @@
 
 Ruby-Stemmer exposes SnowBall API to Ruby.
 
-{Project Status}[http://stillmaintained.com/aurelian/ruby-stemmer.png]
-
 {Travis CI Status}[https://api.travis-ci.org/aurelian/ruby-stemmer.png]
 
 This package includes libstemmer_c library released under BSD licence 
-and available for free {here}[http://snowball.tartarus.org/dist/libstemmer_c.tgz].
+and available for free {here}[https://snowballstem.org/download.html].
 
 Support for latin language is also included and it has been generated with the snowball compiler using 
-{schinke contribution}[http://snowball.tartarus.org/otherapps/schinke/intro.html].
+{schinke contribution}[https://snowballstem.org/otherapps/schinke/].
 
-For more details about libstemmer_c please visit the {SnowBall website}[http://snowball.tartarus.org].
+For more details about libstemmer_c please visit the {SnowBall website}[https://snowballstem.org/].
 
 == Usage
 
@@ -44,7 +42,7 @@ For more details about libstemmer_c please visit the {SnowBall website}[http://s
 === More details 
 
 * Complete API in {RDoc format}[http://rdoc.info/github/aurelian/ruby-stemmer/master/frames]
-* More usage on the {test file}[http://github.com/aurelian/ruby-stemmer/blob/master/test/lingua/test_stemmer.rb]
+* More usage on the {test file}[https://github.com/aurelian/ruby-stemmer/blob/master/test/lingua/test_stemmer.rb]
 
 == Install
 
@@ -62,7 +60,7 @@ As far as I know the above should work with {rubyinstaller}[http://rubyinstaller
 
  gem install ruby-stemmer --platform=x86-mswin32
 
-{It's known}[http://cl.ly/BX9o] to work under Windows XP.
+{It's known}[https://cl.ly/BX9o] to work under Windows XP.
 
 === Development version
 
@@ -87,17 +85,17 @@ Idea is to have same builds as in travis.yml.
 The stemming process is an algorithm to allow one to find the stem of an word (not the root of it).
 For further reference on stem vs. root, please check wikipedia articles on the topic:
 
-* http://en.wikipedia.org/wiki/Stem_%28linguistics%29
-* http://en.wikipedia.org/wiki/Root_%28linguistics%29
+* https://en.wikipedia.org/wiki/Word_stem
+* https://en.wikipedia.org/wiki/Root_(linguistics)
 
 == TODO
 
-* {Open issues}[http://github.com/aurelian/ruby-stemmer/issues]
+* {Open issues}[https://github.com/aurelian/ruby-stemmer/issues]
 
 == Note on Patches/Pull Requests
  
-* Fork the project from {github}[http://github.com/aurelian/ruby-stemmer]
-* Make your feature addition or {bug fix}[http://github.com/aurelian/ruby-stemmer/issues]
+* Fork the project from {github}[https://github.com/aurelian/ruby-stemmer]
+* Make your feature addition or {bug fix}[https://github.com/aurelian/ruby-stemmer/issues]
 * Add tests for it. This is important so I don't break it in a
   future version unintentionally.
 * Commit, do not mess with rakefile, version, or history.
@@ -108,10 +106,10 @@ For further reference on stem vs. root, please check wikipedia articles on the t
 
 == Alternative Stemmers for Ruby
 
-* {stemmer4r}[http://rubyforge.org/projects/stemmer4r] (ext)
-* {fast-stemmer}[http://github.com/romanbsd/fast-stemmer] (ext)
-* {uea-stemmer}[http://github.com/ealdent/uea-stemmer] (ext)
-* {stemmer}[http://rubyforge.org/projects/stemmer] (pure ruby)
+* {stemmer4r}[https://rubygems.org/gems/stemmer4r] (ext)
+* {fast-stemmer}[https://rubygems.org/gems/fast-stemmer] (ext)
+* {uea-stemmer}[https://rubygems.org/gems/uea-stemmer] (ext)
+* {stemmer}[https://rubygems.org/gems/stemmer] (pure ruby)
 * add yours
 
 == Copyright
@@ -126,6 +124,6 @@ Copyright (c) 2008-2015 {Aurelian Oancea}[http://locknet.ro]. See MIT-LICENSE fo
 * {Damián Silvani}[https://github.com/munshkr] - Ruby 1.9 encoding
 
 == Real life usage
-* http://planet33.ru is using Ruby-Stemmer together with {Classifier}[http://github.com/yury/classifier] to automatically rate places based on users comments.
+* http://planet33.ru is using Ruby-Stemmer together with {Classifier}[https://github.com/yury/classifier] to automatically rate places based on users comments.
 
 # encoding: utf-8
