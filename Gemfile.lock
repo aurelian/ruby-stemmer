@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ruby-stemmer (2.0.0)
+    ruby-stemmer (2.0.1)
 
 GEM
   remote: https://rubygems.org/
@@ -20,4 +20,4 @@ DEPENDENCIES
   ruby-stemmer!
 
 BUNDLED WITH
-   1.16.1
+   1.17.2
