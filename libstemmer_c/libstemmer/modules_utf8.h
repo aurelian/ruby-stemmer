@@ -25,6 +25,7 @@
 #include "../src_c/stem_UTF_8_spanish.h"
 #include "../src_c/stem_UTF_8_swedish.h"
 #include "../src_c/stem_UTF_8_turkish.h"
+#include "../src_c/stem_UTF_8_lithuanian.h"
 
 typedef enum {
   ENC_UNKNOWN=0,
@@ -42,7 +43,7 @@ static struct stemmer_encoding encodings[] = {
 
 struct stemmer_modules {
   const char * name;
-  stemmer_encoding_t enc; 
+  stemmer_encoding_t enc;
   struct SN_env * (*create)(void);
   void (*close)(struct SN_env *);
   int (*stem)(struct SN_env *);
@@ -100,24 +101,28 @@ static struct stemmer_modules modules[] = {
   {"tr", ENC_UTF_8, turkish_UTF_8_create_env, turkish_UTF_8_close_env, turkish_UTF_8_stem},
   {"tur", ENC_UTF_8, turkish_UTF_8_create_env, turkish_UTF_8_close_env, turkish_UTF_8_stem},
   {"turkish", ENC_UTF_8, turkish_UTF_8_create_env, turkish_UTF_8_close_env, turkish_UTF_8_stem},
+  {"lt", ENC_UTF_8, lithuanian_UTF_8_create_env, lithuanian_UTF_8_close_env, lithuanian_UTF_8_stem},
+  {"lit", ENC_UTF_8, lithuanian_UTF_8_create_env, lithuanian_UTF_8_close_env, lithuanian_UTF_8_stem},
+  {"lithuanian", ENC_UTF_8, lithuanian_UTF_8_create_env, lithuanian_UTF_8_close_env, lithuanian_UTF_8_stem},
   {0,ENC_UNKNOWN,0,0,0}
 };
 static const char * algorithm_names[] = {
-  "danish", 
-  "dutch", 
-  "english", 
-  "finnish", 
-  "french", 
-  "german", 
-  "hungarian", 
-  "italian", 
-  "norwegian", 
-  "porter", 
-  "portuguese", 
-  "romanian", 
-  "russian", 
-  "spanish", 
-  "swedish", 
-  "turkish", 
+  "danish",
+  "dutch",
+  "english",
+  "finnish",
+  "french",
+  "german",
+  "hungarian",
+  "italian",
+  "norwegian",
+  "porter",
+  "portuguese",
+  "romanian",
+  "russian",
+  "spanish",
+  "swedish",
+  "turkish",
+  "lithuanian",
   0
 };

@@ -41,6 +41,7 @@ snowball_sources= \
   src_c/stem_ISO_8859_1_swedish.c \
   src_c/stem_UTF_8_swedish.c \
   src_c/stem_UTF_8_turkish.c \
+  src_c/stem_UTF_8_lithuanian.c \
   runtime/api.c \
   runtime/utilities.c \
   libstemmer/libstemmer.c
@@ -79,6 +80,7 @@ snowball_headers= \
   src_c/stem_ISO_8859_1_swedish.h \
   src_c/stem_UTF_8_swedish.h \
   src_c/stem_UTF_8_turkish.h \
+  src_c/stem_UTF_8_lithuanian.h \
   include/libstemmer.h \
   libstemmer/modules.h \
   runtime/api.h \
