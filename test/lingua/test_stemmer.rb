@@ -100,6 +100,12 @@ class TestStemmer < Minitest::Test
       stem = ::Lingua.stemmer("installation", :language => "fr", :encoding => "ISO-8859-1")
       assert_equal stem.encoding, Encoding::ISO_8859_1
     end
-  end
 
+    def test_lithuanian_stem
+      stemmer = ::Lingua::Stemmer.new(:language => "lt")
+      %w(kompiuteris kompiuterio kompiuteriui kompiuteriu kompiuteri).each do |word|
+        assert_equal stemmer.stem(word), 'kompiuter'
+      end
+    end
+  end
 end
