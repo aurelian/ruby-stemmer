@@ -6,4 +6,4 @@ libstemmer.o: $(snowball_sources:.c=.o)
 stemwords: examples/stemwords.o libstemmer.o
 	$(CC) -o $@ $^
 clean:
-	rm -f stemwords *.o src_c/*.o runtime/*.o libstemmer/*.o
+	rm -f stemwords *.o src_c/*.o runtime/*.o libstemmer/*.o examples/*.o
