@@ -4,11 +4,9 @@ Ruby-Stemmer exposes SnowBall API to Ruby.
 
 {Travis CI Status}[https://api.travis-ci.org/aurelian/ruby-stemmer.png]
 
-This package includes libstemmer_c library released under BSD licence 
-and available for free {here}[https://snowballstem.org/download.html].
+This package includes libstemmer_c library released under BSD licence and available for free {here}[https://snowballstem.org/download.html].
 
-Support for latin language is also included and it has been generated with the snowball compiler using 
-{schinke contribution}[https://snowballstem.org/otherapps/schinke/].
+Support for latin language is also included and it has been generated with the snowball compiler using {schinke contribution}[https://snowballstem.org/otherapps/schinke/].
 
 For more details about libstemmer_c please visit the {SnowBall website}[https://snowballstem.org/].
 
@@ -31,32 +29,26 @@ For more details about libstemmer_c please visit the {SnowBall website}[https://
     puts "~> #{word}" #=> "instal"
   end # => #<Lingua::Stemmer:0x102501e48>
 
-=== Rails
-  
-  # Rails2: -- config/environment.rb:
-  config.gem 'ruby-stemmer', :version => '>=0.6.2', :lib => 'lingua/stemmer'
-  
-  # Rails3: -- Gemfile
-  gem 'ruby-stemmer', '>=0.8.3', :require => 'lingua/stemmer'
+=== Gemfile
 
-=== More details 
+  gem 'ruby-stemmer', '>=2.0.0', :require => 'lingua/stemmer'
+
+=== More details
 
 * Complete API in {RDoc format}[http://rdoc.info/github/aurelian/ruby-stemmer/master/frames]
 * More usage on the {test file}[https://github.com/aurelian/ruby-stemmer/blob/master/test/lingua/test_stemmer.rb]
 
 == Install
 
-=== Standard install with:
-
  gem install ruby-stemmer
 
 ==== Windows
 
-There's also a Windows (Fat bin) compiled against ruby versions: 1.8.7, 1.9.3, 2.1.5, 2.2.0
+There's also a Windows (Fat bin)
 
  gem install ruby-stemmer --platform=x86-mingw32
 
-As far as I know the above should work with {rubyinstaller}[http://rubyinstaller.org/]. If if fails, you could try with:
+As far as I know the above should work with {rubyinstaller}[http://rubyinstaller.org/]. If it fails, you could try with:
 
  gem install ruby-stemmer --platform=x86-mswin32
 
@@ -72,13 +64,11 @@ As far as I know the above should work with {rubyinstaller}[http://rubyinstaller
 
 ==== Cross Compiling
 
-Install {rake-compiler-dev-box}[https://github.com/tjschuck/rake-compiler-dev-box] and follow the setup.
-Inside vagrant box run:
+Install {rake-compiler-dock}[https://github.com/rake-compiler/rake-compiler-dock] and follow the setup.
 
-  $ cd /vagrant
-  $ RUBY_CC_VERSION=1.8.7:1.9.3:2.1.5:2.2.0 package_win32_fat_binary ruby-stemmer
+Then, inside the docker image:
 
-Idea is to have same builds as in travis.yml.
+  $ AR=i686-w64-mingw32-ar CC=i686-w64-mingw32-gcc LD=i686-w64-mingw32-ld rake cross native gem
 
 == NOT A BUG
 
@@ -114,7 +104,7 @@ For further reference on stem vs. root, please check wikipedia articles on the t
 
 == Copyright
 
-Copyright (c) 2008-2015 {Aurelian Oancea}[http://locknet.ro]. See MIT-LICENSE for details.
+Copyright (c) 2008-2020 {Aurelian Oancea}[http://locknet.ro]. See MIT-LICENSE for details.
 
 == Contributors
 
@@ -122,8 +112,5 @@ Copyright (c) 2008-2015 {Aurelian Oancea}[http://locknet.ro]. See MIT-LICENSE fo
 * {Yury Korolev}[https://github.com/yury] - various bug fixes
 * {Aaron Patterson}[https://github.com/tenderlove] - rake compiler (windows support), code cleanup
 * {Damián Silvani}[https://github.com/munshkr] - Ruby 1.9 encoding
-
-== Real life usage
-* http://planet33.ru is using Ruby-Stemmer together with {Classifier}[https://github.com/yury/classifier] to automatically rate places based on users comments.
 
 # encoding: utf-8
