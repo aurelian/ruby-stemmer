@@ -3,13 +3,13 @@ require 'bundler/setup'
 
 require 'rdoc/task'
 require 'rake/testtask'
-require "bundler/gem_tasks"
+require 'bundler/gem_tasks'
 require 'rake/extensiontask'
 require 'rubygems/package_task'
 
-CLOBBER.include("libstemmer_c/**/*.o")
+CLOBBER.include('libstemmer_c/**/*.o')
 
-GEMSPEC = Gem::Specification.load("ruby-stemmer.gemspec")
+GEMSPEC = Gem::Specification.load('ruby-stemmer.gemspec')
 
 Rake::TestTask.new(:test) do |test|
   test.libs << 'lib' << 'test'
@@ -26,7 +26,7 @@ Rake::ExtensionTask.new('ruby-stemmer', GEMSPEC) do |ext|
 end
 
 Rake::RDocTask.new do |rdoc|
-  version = File.exist?('VERSION') ? File.read('VERSION') : ""
+  version = File.exist?('VERSION') ? File.read('VERSION') : ''
   rdoc.rdoc_dir = 'rdoc'
   rdoc.options << '--charset' << 'utf-8'
   rdoc.title = "Ruby-Stemmer #{version}"
@@ -36,5 +36,4 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_files.include('MIT-LICENSE')
 end
 
-task :default => [:clobber, :compile, :test]
-
+task default: %i[clobber compile test]
