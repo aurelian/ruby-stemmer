@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 if RUBY_PLATFORM.match?(/(mswin|mingw)/i)
   require "lingua/#{RUBY_VERSION.sub(/\.\d+$/, '')}/stemmer_native"
 else
@@ -36,19 +38,13 @@ module Lingua
     # will be used
     #
     #   require 'lingua/stemmer'
-    #   s = Lingua::Stemmer.new :language => 'fr'
+    #   s = Lingua::Stemmer.new language: 'fr'
     #
     def initialize(options = {})
       @language = (options[:language] || 'en').to_s
       @encoding = (options[:encoding] || 'UTF_8').to_s
 
-      if RUBY_VERSION >= '1.9'
-        unless @encoding.is_a?(Encoding)
-          @encoding = Encoding.find(@encoding.tr('_', '-'))
-        end
-      else
-        @encoding = @encoding.upcase.tr('-', '_')
-      end
+      @encoding = Encoding.find(@encoding.tr('_', '-'))
 
       native_init(@language, native_encoding(@encoding))
     end
@@ -56,7 +52,7 @@ module Lingua
     private
 
     def native_encoding(enc)
-      RUBY_VERSION >= '1.9' ? enc.name.tr('-', '_') : enc
+      enc.name.tr('-', '_')
     end
   end
 end

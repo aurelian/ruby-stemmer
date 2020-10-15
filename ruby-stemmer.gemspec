@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version = Lingua::Stemmer::VERSION
 
   s.platform = Gem::Platform::RUBY
-  s.required_ruby_version = '>= 1.9.3'
+  s.required_ruby_version = '>= 2.4.0'
 
   s.require_paths = ['lib']
   s.authors = ['Aurelian Oancea', 'Yury Korolev']
