@@ -70,6 +70,13 @@ Then, inside the docker image:
 
   $ AR=i686-w64-mingw32-ar CC=i686-w64-mingw32-gcc LD=i686-w64-mingw32-ld rake cross native gem
 
+Or, build the lib first then compile:
+
+  $ cd libstemmer_c
+  $ AR=i686-w64-mingw33-ar CC=i686-w64-mingw32-gcc LD=i686-w64-mingw32-ld make
+  $ cd ../
+  $ rake cross native gem
+
 == NOT A BUG
 
 The stemming process is an algorithm to allow one to find the stem of an word (not the root of it).
