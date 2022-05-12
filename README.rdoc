@@ -1,4 +1,11 @@
-= Ruby-Stemmer
+= Notice @aurelian May 2022
+
+👋 This project started in 2008 mostly as a mean for me to learn how to build C extensions to ruby, exposing a library at that time I needed to use in a real life project.
+It's 2022 and many things changed since. Most important is my lack of time to keep up with recent libstemmer_c versions and releasing builds compatible with various versions of Windows.
+
+With this in mind, it is fair to archive this project.
+
+= Ruby Stemmer
 
 Ruby-Stemmer exposes SnowBall API to Ruby.
 
